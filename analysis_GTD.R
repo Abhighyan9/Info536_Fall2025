@@ -17,3 +17,12 @@ gtd_clean <- gtd_data %>%
   filter(!is.na(attacktype1_txt))
 
 head(gtd_clean)
+
+#Count the number of each attack type.
+
+attack_counts <- gtd_clean %>%
+  group_by(attacktype1_txt) %>%
+  summarise(n_attacks = n()) %>%
+  arrange(desc(n_attacks))
+
+head(attack_counts)
