@@ -10,3 +10,4 @@ gtd_data <- read.csv("globalterrorismdb_0718dist.csv",
 
 # Basic data exploration
 glimpse(gtd_data)
+head(gtd_data)
