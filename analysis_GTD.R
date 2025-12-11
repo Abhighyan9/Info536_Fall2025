@@ -26,3 +26,20 @@ attack_counts <- gtd_clean %>%
   arrange(desc(n_attacks))
 
 head(attack_counts)
+
+# Bar chart of most common attack types
+ggplot(attack_counts, 
+       aes(x = reorder(attacktype1_txt, n_attacks), 
+           y = n_attacks)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  coord_flip() +
+  labs(
+    title = "Most Common Terrorist Attack Types",
+    x = "Attack Type",
+    y = "Number of Attacks"
+  ) +
+  theme_minimal()
+
+
+
+
